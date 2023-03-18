@@ -1,6 +1,4 @@
-You are given an array of band names. You need to sort those band names in lexicographic order excluding any articles('a', 'an', 'the') and list down those names inside ul id='band' tag using the li tag.
 
-Ex:
 
 // suppose an array that contains a list of popular tourise spots
 let touristSpots = ['The Virupaksha Temple', 'Victoria Memorial', 'Tajmahal'];
