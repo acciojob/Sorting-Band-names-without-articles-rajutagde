@@ -1,4 +1,6 @@
-function sortBands(bands) {
+const bandNames = ['The Beatles', 'Led Zeppelin', 'Pink Floyd', 'The Who', 'Aerosmith', 'Rolling Stones', 'Queen', 'Anthrax', 'Black Sabbath'];
+
+		function sortBands(bands) {
 			const articles = ['the', 'a', 'an'];
 			const sortedBands = bands.sort(function(a, b) {
 				const nameA = a.toLowerCase().replace(/^(the|an|a)\s+/, '');
