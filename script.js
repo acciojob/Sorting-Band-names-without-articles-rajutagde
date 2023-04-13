@@ -1,26 +1,32 @@
-const bandNames = ['The Beatles', 'Led Zeppelin', 'Pink Floyd', 'The Who', 'Aerosmith', 'Rolling Stones', 'Queen', 'Anthrax', 'Black Sabbath'];
+// An array of band names
+const bandNames = ['The Beatles', 'Led Zeppelin', 'Pink Floyd', 'The Who', 'Aerosmith'];
 
-		function sortBands(bands) {
-			const articles = ['the', 'a', 'an'];
-			const sortedBands = bands.sort(function(a, b) {
-				const nameA = a.toLowerCase().replace(/^(the|an|a)\s+/, '');
-				const nameB = b.toLowerCase().replace(/^(the|an|a)\s+/, '');
-				if (nameA < nameB) {
-					return -1;
-				}
-				if (nameA > nameB) {
-					return 1;
-				}
-				return 0;
-			});
-			return sortedBands;
-		}
+// Define an array of articles to be excluded
+const articles = ['a', 'an', 'the'];
 
-		const sortedBands = sortBands(bandNames);
+// Sort the band names in lexicographic order excluding articles
+bandNames.sort((a, b) => {
+  // Remove articles from the band names and convert them to lowercase
+  a = a.replace(/^(a|an|the)\s+/i, '').toLowerCase();
+  b = b.replace(/^(a|an|the)\s+/i, '').toLowerCase();
+  
+  // Compare the modified band names
+  if (a < b) {
+    return -1;
+  } else if (a > b) {
+    return 1;
+  } else {
+    return 0;
+  }
+});
 
-		const bandList = document.getElementById("band");
-		sortedBands.forEach(function(band) {
-			const li = document.createElement("li");
-			li.appendChild(document.createTextNode(band));
-			bandList.appendChild(li);
-		});
+// Get the <ul> element with the id "band"
+const bandList = document.getElementById('band');
+
+// Loop through the sorted band names and add them to the <ul> element as <li> elements
+for (const i = 0; i < bandNames.length; i++) {
+  const listItem = document.createElement('li');
+  let textNode = document.createTextNode(bandNames[i]);
+  listItem.appendChild(textNode);
+  bandList.appendChild(listItem);
+}
