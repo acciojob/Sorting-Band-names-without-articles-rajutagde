@@ -1,5 +1,5 @@
 // An array of band names
-const bandNames = ['The Beatles', 'Led Zeppelin', 'Pink Floyd', 'The Who', 'Aerosmith'];
+let bandNames = ['The Beatles', 'Led Zeppelin', 'Pink Floyd', 'The Who', 'Aerosmith'];
 
 // Define an array of articles to be excluded
 const articles = ['a', 'an', 'the'];
@@ -21,11 +21,11 @@ bandNames.sort((a, b) => {
 });
 
 // Get the <ul> element with the id "band"
-const bandList = document.getElementById('band');
+let bandList = document.getElementById('band');
 
 // Loop through the sorted band names and add them to the <ul> element as <li> elements
-for (const i = 0; i < bandNames.length; i++) {
-  const listItem = document.createElement('li');
+for (let i = 0; i < bandNames.length; i++) {
+  let listItem = document.createElement('li');
   let textNode = document.createTextNode(bandNames[i]);
   listItem.appendChild(textNode);
   bandList.appendChild(listItem);
