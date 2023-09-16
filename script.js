@@ -24,3 +24,9 @@ bandNames.forEach(function(band) {
   li.appendChild(document.createTextNode(band));
   bandList.appendChild(li);
 });
+const bandList = document.getElementById('band');
+bandNames.forEach(function(band) {
+  const li = document.createElement('li');
+  li.appendChild(document.createTextNode(band));
+  bandList.appendChild(li);
+});
